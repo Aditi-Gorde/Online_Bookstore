@@ -1,0 +1,54 @@
+.div1 {
+ background-color: rgb(222, 214, 201);
+
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+ 
+  }
+  
+  .mainImg {
+    flex: 1;
+    width: 22rem;
+    height: 26rem;
+  }
+  
+  .text {
+    flex: 1; 
+    padding: 30px; 
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .image,
+    .text {
+      max-width: 100%; 
+    }
+  }
+
+.book-container {
+    padding: 2rem;
+    padding-top: 4rem;
+    display:flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .book-container {
+      flex-direction: column;
+      justify-content: space-between;
+    }
+}
+
+
+  
+  
+
