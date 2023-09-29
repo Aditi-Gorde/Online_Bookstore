@@ -21,7 +21,41 @@ const Schema = mongoose.Schema;
     average_rating : {
         type: Number,
     },
+
+    isbn : {
+        type: String,
+    },
+
+    isbn13 : {
+        type: Number,
+    },
+
+    language_code : {
+        type: String,
+    },
+
+    num_pages : {
+        type: Number,
+    },
+
+    ratings_count : {
+        type: Number,
+    },
+
+    text_reviews_count : {
+        type: Number,
+    },
+
+    publication_date : {
+        type: Date,
+    },
+
+    publisher : {
+        type: String,
+    },
+
   });
 
   module.exports = mongoose.model("Book", bookSchema);
+
 

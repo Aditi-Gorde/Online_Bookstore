@@ -18,13 +18,12 @@ const initialValues = {
     phone: "",
     password: "",
     confirmPassword: "",
-   // aadhar: ""
 }
 
 export const SignUp = () => {
 
     const backendApi = process.env.REACT_APP_API_URL;
-    // console.log(backendApi)
+     console.log(backendApi)
 
 
     // const captchaRef = useRef(null)
@@ -163,7 +162,7 @@ export const SignUp = () => {
 
                 <div className='signUp_login'>
                    
-                    <Link to="/login" className='btn_primary'>Already have an Account?</Link>
+                    <Link to="/login" className='btn btn_primary'>Already have an Account?</Link>
                 </div>
 
             </form>

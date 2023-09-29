@@ -4,7 +4,6 @@ const getAllBooks = async (req, res, next) => {
   let books;
   try {
     books = await Book.find();
-    console.log(Book);
   } catch (err) {
     console.log(err);
   }

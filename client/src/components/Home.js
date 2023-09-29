@@ -3,9 +3,30 @@ import * as React from 'react/jsx-runtime';
 import ReactDOM from 'react-dom';
 import '../assets/Home.style.css'
 import SingleBook from './SingleBook'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 
 export default function Home() {
+
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/books')
+      .then((response) => {
+        setBooks(response.data.books);
+        console.log(books);
+      })
+      .catch((error) => {
+        console("error");
+        console.error(error);
+      });
+  }, []);
+console.log(books);
+  if (!Array.isArray(books)) {
+    return <div>No books available</div>;
+  }
+  const limitedBooks = books.slice(5, 9);
   return (
         <>
 <br /><br />
@@ -100,10 +121,15 @@ export default function Home() {
         </div>
       </div>
       <div className='book-container'>
+       {limitedBooks && limitedBooks.map((book, i) => (
+            <li key={i}>
+              <SingleBook book={book} />
+            </li>
+          ))}
+               {/* <SingleBook />
               <SingleBook />
               <SingleBook />
-              <SingleBook />
-              <SingleBook />
+              <SingleBook /> */}
             </div>
             <br /><br />
         </>
