@@ -1,3 +1,5 @@
+//Footer
+
 import React from 'react';
 import '../assets/Footer.style.css';
 import 'font-awesome/css/font-awesome.min.css';
@@ -5,6 +7,7 @@ import 'font-awesome/css/font-awesome.min.css';
 
 function Footer() {
   return (
+    <><br /><br />
     <footer className="footer">
       <div className="container">
         <div className="row">
@@ -35,6 +38,7 @@ function Footer() {
         <p>&copy; {new Date().getFullYear()} Your Bookstore. All rights reserved.</p>
       </div>
     </footer>
+    </>
   );
 }
 

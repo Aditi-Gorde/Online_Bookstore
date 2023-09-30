@@ -1,0 +1,40 @@
+.swiper-wrapper {
+    transition-duration: 0ms;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.swiper-slide {
+    width: 456px;
+}
+
+.star {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #ccc;
+  }
+  
+  .star.filled {
+    color: #f0b90b; /* Fill color for filled stars */
+  }
+
+.rev-form {
+    padding-left: 2rem;
+    width : 45rem;
+}
+
+.sub {
+    background-color: rgb(222, 214, 201);
+}
+
+.rev-start {
+    padding-left: 2rem;
+}
+
+.news-outer {
+    background-color:#f3f3f3;
+}
+
+.container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}

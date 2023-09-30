@@ -1,5 +1,7 @@
+//Sign Up page
+
 import React, { useRef, useState } from 'react'
-import '../assets/signUp.css'
+import '../assets/signUp.style.css'
 //import ReCAPTCHA from "react-google-recaptcha"
 import { Link, useNavigate } from 'react-router-dom'
 import { useFormik } from "formik"
@@ -8,6 +10,7 @@ import { encrypt } from '../utils'
 import { signUpSchema } from '../schemas'
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import '../assets/signUp.style.css';
 
 import axios from 'axios'
 
@@ -22,7 +25,7 @@ const initialValues = {
 
 export const SignUp = () => {
 
-    const backendApi = process.env.REACT_APP_API_URL;
+    const backendApi = "http://localhost:5000";
      console.log(backendApi)
 
 
@@ -109,6 +112,7 @@ export const SignUp = () => {
         })
     
     return (
+        <>
         <div className='signUp'>
             <h1>SIGN UP</h1>
             <form onSubmit={handleSubmit}>
@@ -168,6 +172,7 @@ export const SignUp = () => {
             </form>
             <ToastContainer />
         </div>
+</>
     );
 
 }

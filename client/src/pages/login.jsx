@@ -1,3 +1,5 @@
+//Login page
+
 import React from 'react'
 import '../assets/login.css'
 //import loginImg from '../assets/utils/loginImg.png'

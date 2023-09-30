@@ -1,3 +1,10 @@
+.signUp {
+    background-image: url( '../../public/images/post-item4.jpg');
+    background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 :root {
   --borderColor: #707071;
   --btnHoverColor: #eb003f;
@@ -114,3 +121,4 @@ input:focus {
   font-size: 0.8rem;
   color: red;
 }
+

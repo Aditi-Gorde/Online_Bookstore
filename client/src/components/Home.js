@@ -1,4 +1,5 @@
-//import React from 'react'
+//Home Page
+
 import * as React from 'react/jsx-runtime';
 import ReactDOM from 'react-dom';
 import '../assets/Home.style.css'
@@ -18,7 +19,7 @@ export default function Home() {
         console.log(books);
       })
       .catch((error) => {
-        console("error");
+        console.log("error");
         console.error(error);
       });
   }, []);
@@ -126,10 +127,6 @@ console.log(books);
               <SingleBook book={book} />
             </li>
           ))}
-               {/* <SingleBook />
-              <SingleBook />
-              <SingleBook />
-              <SingleBook /> */}
             </div>
             <br /><br />
         </>

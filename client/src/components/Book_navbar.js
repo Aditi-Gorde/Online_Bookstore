@@ -1,3 +1,5 @@
+//Navigation Bar
+
 import React from 'react'
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
@@ -49,6 +51,9 @@ export default function Book_navbar() {
           <li class="nav-item">
             <a class="nav-link" href="#">Cart</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/About">About Us</a>
+          </li>
         </ul>
       </div>
       <div className="navbar-end">
@@ -64,7 +69,7 @@ export default function Book_navbar() {
               <NavLink to="/signup" className="nav_signup">
                 Sign Up
               </NavLink>
-              <NavLink to="s/login" className="nav_login">
+              <NavLink to="/login" className="nav_login">
                 Log In
               </NavLink>
             </div>

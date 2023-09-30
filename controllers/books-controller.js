@@ -71,16 +71,33 @@ const addBook = async (req, res, next) => {
 
 const updateBook = async (req, res, next) => {
   const id = req.params.id;
-  const { name, author, description, price, available, image } = req.body;
+  const { bookID,
+    title,
+    authors,
+    average_rating,
+    isbn,
+    isbn13,
+    language_code,
+    num_pages,
+    ratings_count,
+    text_reviews_count,
+    publication_date,
+    publisher, } = req.body;
   let book;
   try {
     book = await Book.findByIdAndUpdate(id, {
-      name,
-      author,
-      description,
-      price,
-      available,
-      image,
+      bookID,
+    title,
+    authors,
+    average_rating,
+    isbn,
+    isbn13,
+    language_code,
+    num_pages,
+    ratings_count,
+    text_reviews_count,
+    publication_date,
+    publisher,
     });
     book = await book.save();
   } catch (err) {
@@ -106,8 +123,30 @@ const deleteBook = async (req, res, next) => {
   return res.status(200).json({ message: "Product Successfully Deleted" });
 };
 
+
+const searchBook = async (req, res) => {
+  const page = parseInt(req.query.page) || 1; // Page number (default: 1)
+  const perPage = parseInt(req.query.perPage) || 10; // Number of books per page (default: 10)
+
+  try {
+    const skip = (page - 1) * perPage;
+
+    // Fetch paginated books from the database
+    const books = await Book.find()
+      .skip(skip)
+      .limit(perPage);
+
+   // res.json(books);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Server error' });
+  }
+};
+
+
 exports.getAllBooks = getAllBooks;
 exports.addBook = addBook;
 exports.getById = getById;
 exports.updateBook = updateBook;
 exports.deleteBook = deleteBook;
+exports.searchBook = searchBook;

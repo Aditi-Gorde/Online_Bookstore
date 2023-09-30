@@ -1,3 +1,5 @@
+//To update book values 
+
 import {
     Box,
     Button,
@@ -28,18 +30,24 @@ import {
     const sendRequest = async () => {
       await axios
         .put(`http://localhost:5000/books/${id}`, {
-          name: String(inputs.name),
-          author: String(inputs.author),
-          description: String(inputs.description),
-          price: Number(inputs.price),
-          image: String(inputs.image),
-          available: Boolean(checked),
+          bookID:Number(inputs.bookID),
+          title:String(inputs.title),
+          authors:String(inputs.authors),
+          average_rating:Number(inputs.average_rating),
+          isbn:String(inputs.isbn),
+          isbn13:Number(inputs.isbn13),
+          language_code:String(inputs.language_code),
+          num_pages:Number(inputs.num_pages),
+          ratings_count:Number(inputs.ratings_count),
+          text_reviews_count:Number(inputs.text_reviews_count),
+          publication_date:Date(inputs.publication_date),
+          publisher:String(inputs.publisher),
         })
         .then((res) => res.data);
     };
     const handleSubmit = (e) => {
       e.preventDefault();
-      sendRequest().then(() => history("/books"));
+      sendRequest().then(() => history("/"));
     };
     const handleChange = (e) => {
       setInputs((prevState) => ({
@@ -70,7 +78,7 @@ import {
                margin="normal"
                fullWidth
                variant="outlined"
-               name="name"
+               name="bookID"
              />
              <FormLabel>Title</FormLabel>
              <TextField
@@ -79,7 +87,7 @@ import {
                margin="normal"
                fullWidth
                variant="outlined"
-               name="author"
+               name="title"
              />
              <FormLabel>Authors</FormLabel>
              <TextField
@@ -88,7 +96,7 @@ import {
                margin="normal"
                fullWidth
                variant="outlined"
-               name="description"
+               name="authors"
              />
              <FormLabel>Average Rating</FormLabel>
              <TextField
@@ -98,7 +106,7 @@ import {
                margin="normal"
                fullWidth
                variant="outlined"
-               name="price"
+               name="average_rating"
              />
              <FormLabel>ISBN</FormLabel>
              <TextField
@@ -107,7 +115,7 @@ import {
                margin="normal"
                fullWidth
                variant="outlined"
-               name="image"
+               name="isbn"
              />
              <FormLabel>ISBN13</FormLabel>
              <TextField
@@ -116,7 +124,7 @@ import {
                margin="normal"
                fullWidth
                variant="outlined"
-               name="name"
+               name="isbn13"
              />
              <FormLabel>Language Code</FormLabel>
              <TextField
@@ -125,7 +133,7 @@ import {
                margin="normal"
                fullWidth
                variant="outlined"
-               name="name"
+               name="language_code"
              />
              <FormLabel>Number of Pages</FormLabel>
              <TextField
@@ -134,7 +142,7 @@ import {
                margin="normal"
                fullWidth
                variant="outlined"
-               name="name"
+               name="num_pages"
              />
              <FormLabel>Ratings Count</FormLabel>
              <TextField
@@ -143,7 +151,7 @@ import {
                margin="normal"
                fullWidth
                variant="outlined"
-               name="name"
+               name="ratings_count"
              />
              <FormLabel>Text Reviews</FormLabel>
              <TextField
@@ -152,7 +160,7 @@ import {
                margin="normal"
                fullWidth
                variant="outlined"
-               name="name"
+               name="text_reviews_count"
              />
              <FormLabel>Publication Date</FormLabel>
              <TextField
@@ -161,7 +169,7 @@ import {
                margin="normal"
                fullWidth
                variant="outlined"
-               name="name"
+               name="publication_date"
              />
              <FormLabel>Publisher</FormLabel>
              <TextField
@@ -170,7 +178,7 @@ import {
                margin="normal"
                fullWidth
                variant="outlined"
-               name="name"
+               name="publisher"
              />
              
              <Button variant="contained" type="submit">
