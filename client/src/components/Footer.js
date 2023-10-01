@@ -21,7 +21,7 @@ function Footer() {
               <li><a href="/">Home</a></li>
               <li><a href="/books">Books</a></li>
               <li><a href="/about">About</a></li>
-              <li><a href="/contact">Cart</a></li>
+              <li><a href="/Cart">Cart</a></li>
             </ul>
           </div>
           <div className="col-md-4">

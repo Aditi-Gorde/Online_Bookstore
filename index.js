@@ -8,6 +8,7 @@ const path = require("path");
 
 const router = require("./routes/book-routes");
 const userRoutes = require("./routes/userRoutes");
+const cartRoutes = require("./routes/cartRoutes");
 
 // Create an instance of the Express.js server
 const app = express();
@@ -21,6 +22,7 @@ app.use(errorHandler);
 app.use(cors());
 app.use("/users", userRoutes);
 app.use("/books", router);
+app.use("/Cart",cartRoutes);
 
 
 

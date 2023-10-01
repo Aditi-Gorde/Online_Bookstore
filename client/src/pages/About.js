@@ -11,7 +11,7 @@ function About(){
     return (
         <>
         <section id="about" class="padding-medium">
-        <h3 class="py-3">Who are we</h3>
+        <h3 class=" heading" >Who are we</h3>
             <div class="container">
                  
                  <div class="row">
@@ -26,7 +26,7 @@ function About(){
                 </div>
                 </div>
  
-          <p style={{paddingLeft:'2rem'}}>Et id sapien id enim, sit tempor cursus elit, fusce. Nunc tristique facilisis consectetur at vivamus ut porta porta. Ut nisl, tortor, aliquam blandit vitae vehicula vivamus leo nullam urna, scelerisque unc lectus phasellus adipiscing arcu. Tristique facilisis nunc consectetur at tempor. Et id sapien id enim, sit tempor cursus elit, fusce. Nunc tristique facilisis consectetur at vivamus ut porta porta. Ut nisl, tortor, aliquam blandit vitae vehicula vivamus leo nullam urna, scelerisque unc lectus phasellus adipiscing arcu. Tristique facilisis nunc consectetur at tempor. Et id sapien id enim, sit tempor cursus elit, fusce. Nunc tristique facilisis consectetur at vivamus ut porta porta. Ut nisl, tortor, aliquam blandit vitae vehicula vivamus leo nullam urna, scelerisque unc lectus phasellus adipiscing arcu. Tristique facilisis nunc consectetur at tempor.</p>
+          <p style={{paddingLeft:'2rem'}}>At BookTopia, we're passionate about books and the magic they bring to our lives. As avid readers and lovers of literature, we've created a curated collection of books that cater to all tastes and ages. <br /> Our mission is simple: to connect people with the joy of reading. Whether you're seeking knowledge, entertainment, or inspiration, our shelves are stocked with carefully selected titles to transport you to new worlds and spark your imagination. <br /> We're more than just a bookstore, we're a community of book enthusiasts. Join us for book clubs, author events, and discussions to share your love of reading.We are committed to promoting the joy of reading and the power of knowledge. We believe that books have the incredible ability to transport us to different worlds, expand our horizons, and ignite our imagination. Our carefully curated collection reflects our dedication to bringing you the finest literature and educational resources. <br /> Thank you for being a part of our literary journey. Explore our shelves, discover new stories, and let's celebrate the world of books together.</p>
     </section> <br /><br />
 
     <section id="newsletter" class="news-outer">

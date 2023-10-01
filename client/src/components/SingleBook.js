@@ -8,7 +8,7 @@ import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
 import '../assets/SingleBook.style.css';
 
-function SingleBook({book, addToCart }) {
+function SingleBook({book}) {
   const history = useNavigate();
   const _id = book._id;
   const deleteHandler = async () => {
@@ -19,6 +19,24 @@ function SingleBook({book, addToCart }) {
       .then(() => history("/")) 
   };
 
+  const handleCart = async () => {
+    await axios.post(`http://localhost:5000/Cart`, {
+      bookID:Number(book.bookID),
+      title:String(book.title),
+      authors:String(book.authors),
+      average_rating:Number(book.average_rating),
+      isbn:String(book.isbn),
+      isbn13:Number(book.isbn13),
+      language_code:String(book.language_code),
+      num_pages:Number(book.num_pages),
+      ratings_count:Number(book.ratings_count),
+      text_reviews_count:Number(book.text_reviews_count),
+      publication_date:Date(book.publication_date),
+      publisher:String(book.publisher),
+    })
+    .then((res) => res.data);
+  };
+
 
   console.log(_id);
   const [selectedOption, setSelectedOption] = useState('Edit');
@@ -26,25 +44,6 @@ function SingleBook({book, addToCart }) {
   const handleDropdownSelect = (option) => {
     setSelectedOption(option);
   };
-
-  // const [cart, setCart] = useState([]);
-  // const [totalPrice, setTotalPrice] = useState(0);
-  // const [books, setBooks] = useState([]);
-
-  // useEffect(() => {
-  //   axios.get('http://localhost:5000/books')
-  //     .then((response) => {
-  //       setBooks(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }, []);
-
-  // const addToCart = (book) => {
-  //   setCart([...cart, book]);
-  //   setTotalPrice(totalPrice + book.price);
-  // };
 
   return (
     <Card style={{ width: '18rem' }}>
@@ -77,7 +76,7 @@ function SingleBook({book, addToCart }) {
           </Dropdown.Menu>
         </Dropdown>
       {/* <Card.Link href="#"><button class="btn" type="submit">Edit</button></Card.Link> */}
-        <Card.Link href={`/cart/${_id}`} style={{marginLeft:'4rem'}}><button class="btn ac" type="submit" >Add to cart</button></Card.Link>
+        <Card.Link href='' style={{marginLeft:'4rem'}}><button onClick={handleCart} class="btn ac" type="submit" >Add to cart</button></Card.Link>
       </Card.Body>
     </Card>
   );
@@ -91,4 +90,5 @@ export default SingleBook;
 <Nav.Link href="#disabled" disabled>
   Disabled
 </Nav.Link>
-</Nav.Item> */}
+</Nav.Item>
+{`/Cart/${_id}`} */}

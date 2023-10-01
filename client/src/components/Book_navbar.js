@@ -5,10 +5,20 @@ import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../assets/Book_navbar.style.css'
 
 
 export default function Book_navbar() {
+
+  const editClick = () => {
+    toast.success('Choose the book to be Edited', {
+      position: 'top-right',
+      autoClose: 3000,  
+    });
+  };
+  
   const { logout } = useLogout();
   const { user } = useAuthContext();
 
@@ -35,9 +45,10 @@ export default function Book_navbar() {
             <li><NavLink to="/AddBook" className="dropdown-item">
                 Add Book
               </NavLink></li>
-            <li><a class="dropdown-item" href="/BookDetail">Update</a></li>
+            <li><a class="dropdown-item" href="/AllBooks" onClick={editClick}>Update</a></li>
             <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Delete</a></li>
+            <li><a class="dropdown-item" href="/AllBooks" onClick={editClick}>Delete</a></li>
+            <ToastContainer />
           </ul>
         </li>
       </ul>
@@ -49,7 +60,7 @@ export default function Book_navbar() {
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
           <li class="nav-item">
-            <a class="nav-link" href="#">Cart</a>
+            <a class="nav-link" href={`/Cart`}>Cart</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/About">About Us</a>

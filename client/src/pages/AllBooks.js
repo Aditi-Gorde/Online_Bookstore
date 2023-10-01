@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import SingleBook from '../components/SingleBook';
+import '../assets/AllBooks.style.css'
 
 function AllBooks() {
   const [books, setBooks] = useState([]);
@@ -9,8 +11,9 @@ function AllBooks() {
 
   useEffect(() => {
     // Fetch books from the API
+    //?page=${currentPage}
     axios
-      .get(`/?page=${currentPage}`)
+      .get(`http://localhost:5000/books/?page=${currentPage}`)
       .then((response) => {
         setBooks(response.data.books);
         console.log(books);
@@ -22,15 +25,14 @@ function AllBooks() {
 
   return (
     <div>
-      <h2>Book List</h2>
-      <ul>
-        {books.map((book) => (
-          <li key={book._id}>
-            <p>Title: {book.title}</p>
-            <p>Authors: {book.authors}</p>
+      <h2 className='heading'>Book List</h2>
+      <div className='book-container'>
+        {books.map((book,i) => (
+          <li key={i}>
+           <SingleBook book={book} />
           </li>
         ))}
-      </ul>
+      </div>
       <div>
         <button onClick={() => setCurrentPage(currentPage - 1)}>Previous</button>
         <button onClick={() => setCurrentPage(currentPage + 1)}>Next</button>

@@ -118,7 +118,7 @@ console.log(books);
       <div class="container display-header d-flex flex-wrap justify-content-between pb-4">
         <h3 >Best selling Items</h3>
         <div class="btn-right d-flex flex-wrap align-items-center">
-          <a href="shop.html" class="btn me-5" style={{fontSize:'1.5rem'}}>View all items →</a>
+          <a href="/AllBooks" class="btn me-5" style={{fontSize:'1.5rem'}}>View all items →</a>
         </div>
       </div>
       <div className='book-container'>

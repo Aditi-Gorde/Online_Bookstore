@@ -1,32 +1,35 @@
 //Cart functionality to display the cart and items in it
 
 import React from "react";
-import cartItem from "../components/cartItem"
+import CartItem from "../components/CartItem"
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import SingleBook from "../components/SingleBook";
+import "../assets/cart.style.css"
 
-function cart() {
-    const id = useParams().id;
-    const history = useNavigate();
+function Cart() {
+    const [books, setBooks] = useState([]);
     useEffect(() => {
-      const fetchHandler = async () => {
-        await axios
-          .get(`http://localhost:5000/books/${id}`)
-          .then((res) => res.data)
-          .then((data) => setInputs(data.book));
-      };
-      fetchHandler();
-    }, [id]);
+        axios.get('http://localhost:5000/Cart')
+          .then((response) => {
+            setBooks(response.data.books);
+            console.log(books);
+          })
+          .catch((error) => {
+            console.log("error");
+            console.error(error);
+          });
+      }, []);
 
     return(
         <section className="cart-items">
+            <h2 className="heading">Cart</h2>
             <div className="container">
-                <h2>Cart</h2>
-                <div>
-                    {book.map((book, i) => (
+            <div>
+                    {books.map((book, i) => (
                         <li key={i}>
-                            <cartItem book={book} />
+                            <CartItem book={book} />
                         </li>
                     ))}
                 </div>
@@ -35,4 +38,4 @@ function cart() {
     )
 }
 
-export {cart};
+export {Cart};

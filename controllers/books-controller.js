@@ -124,23 +124,22 @@ const deleteBook = async (req, res, next) => {
 };
 
 
-const searchBook = async (req, res) => {
+const searchBook = async (req, res,next) => {
   const page = parseInt(req.query.page) || 1; // Page number (default: 1)
   const perPage = parseInt(req.query.perPage) || 10; // Number of books per page (default: 10)
-
+console.log(page);
+let books;
   try {
     const skip = (page - 1) * perPage;
-
     // Fetch paginated books from the database
-    const books = await Book.find()
+    books = await Book.find()
       .skip(skip)
       .limit(perPage);
-
-   // res.json(books);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Server error' });
+    return res.status(500).json({ error: 'Server error' });
   }
+  return res.status(200).json({ books });
 };
 
 
