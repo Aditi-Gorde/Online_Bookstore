@@ -26,7 +26,7 @@ function About(){
                 </div>
                 </div>
  
-          <p style={{paddingLeft:'2rem'}}>At BookTopia, we're passionate about books and the magic they bring to our lives. As avid readers and lovers of literature, we've created a curated collection of books that cater to all tastes and ages. <br /> Our mission is simple: to connect people with the joy of reading. Whether you're seeking knowledge, entertainment, or inspiration, our shelves are stocked with carefully selected titles to transport you to new worlds and spark your imagination. <br /> We're more than just a bookstore, we're a community of book enthusiasts. Join us for book clubs, author events, and discussions to share your love of reading.We are committed to promoting the joy of reading and the power of knowledge. We believe that books have the incredible ability to transport us to different worlds, expand our horizons, and ignite our imagination. Our carefully curated collection reflects our dedication to bringing you the finest literature and educational resources. <br /> Thank you for being a part of our literary journey. Explore our shelves, discover new stories, and let's celebrate the world of books together.</p>
+          <p style={{padding:'0 2rem',textAlign:'justify'}}>At BookTopia, we're passionate about books and the magic they bring to our lives. As avid readers and lovers of literature, we've created a curated collection of books that cater to all tastes and ages. <br /> Our mission is simple: to connect people with the joy of reading. Whether you're seeking knowledge, entertainment, or inspiration, our shelves are stocked with carefully selected titles to transport you to new worlds and spark your imagination. <br /> We're more than just a bookstore, we're a community of book enthusiasts. Join us for book clubs, author events, and discussions to share your love of reading.We are committed to promoting the joy of reading and the power of knowledge. We believe that books have the incredible ability to transport us to different worlds, expand our horizons, and ignite our imagination. Our carefully curated collection reflects our dedication to bringing you the finest literature and educational resources. <br /> Thank you for being a part of our literary journey. Explore our shelves, discover new stories, and let's celebrate the world of books together.</p>
     </section> <br /><br />
 
     <section id="newsletter" class="news-outer">
@@ -71,18 +71,18 @@ function About(){
                   <div className='rev-form'>
                   <form id="form">
                     <div class="py-3">
-                      <label>Your Name *</label>
-                      <input type="text" name="name" placeholder="Write your name here" class="w-100" />
+                      <label>Your Name *</label><br />
+                      <input type="text" name="name" placeholder="Write your name here" class="rev_inp" />
                     </div>
                     <div class="py-3">
-                      <label>Your Email *</label>
-                      <input type="text" name="email" placeholder="Write your email here" class="w-100" />
+                      <label>Your Email *</label><br />
+                      <input type="text" name="email" placeholder="Write your email here" class="rev_inp" />
                     </div>
                     <div class="py-3">
-                      <label>Your Review *</label>
-                      <textarea rows={5} placeholder="Write your review here" class="w-100"></textarea>
+                      <label>Your Review *</label><br />
+                      <textarea rows={5} className='rev_inp' placeholder="Write your review here" ></textarea>
                     </div>
-                    <button type="submit" name="submit" class="btn sub w-100 my-3">Submit</button>
+                    <button type="submit" name="submit" class="btn sub my-3 rev_inp">Submit</button>
                   </form>
                   </div>
                 </div>

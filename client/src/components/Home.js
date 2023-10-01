@@ -6,6 +6,7 @@ import '../assets/Home.style.css'
 import SingleBook from './SingleBook'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 export default function Home() {
@@ -30,26 +31,23 @@ console.log(books);
   const limitedBooks = books.slice(5, 9);
   return (
         <>
-<br /><br />
             <div className="container div1">
               <div className="image">
                   <img className='mainImg' src={process.env.PUBLIC_URL + '/images/post-item4.jpg'}alt="Image" />
               </div>
               <div className="text">
-              <h2 className='homeH2'>ONCE UPON A TIME <p>Scroll down</p></h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maxime, animi hic molestiae voluptates deserunt reiciendis placeat adipisci tenetur suscipit optio pariatur reprehenderit? Quam, quo a. Omnis assumenda velit porro?</p>
+              <h2 className='homeH2'>Welcome to </h2>
+              <p>Discover, read, and connect with your favorite books and authors. Explore a diverse collection, join discussions, and enjoy reading anywhere, anytime. Start your reading journey today and dive into a world of stories.Join our passionate community of readers and writers, and start your literary adventure today.</p>
               </div>
             </div>
 
-<br /><br /><br />
-
-      <section id="company-services" class="padding-xlarge">
+      <section id="company-services" class="padding-xlarge" style={{marginTop:'6rem'}}>
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-6 pb-3">
             <div class="icon-box text-center">
               <span class="icon-box-icon d-inline-block p-4 border border-accent rounded-circle mb-4">
-              <i className="fab fa-facebook"></i>
+              <FontAwesomeIcon icon="fa-solid fa-truck" size='xl' style={{color: "#000000",}} />
               </span>
               <div class="icon-box-content">
                 <h4 class="card-title">Free delivery</h4>
@@ -60,7 +58,7 @@ console.log(books);
           <div class="col-lg-3 col-md-6 pb-3">
             <div class="icon-box text-center">
               <div class="icon-box-icon d-inline-block p-4 border border-accent rounded-circle mb-4">
-              <i className="fab fa-facebook"></i>
+              <FontAwesomeIcon icon="fa-solid fa-book" size='xl' style={{color: "#000000",}} />
               </div>
               <div class="icon-box-content">
                 <h4 class="card-title">Quality guarantee</h4>
@@ -71,7 +69,7 @@ console.log(books);
           <div class="col-lg-3 col-md-6 pb-3">
             <div class="icon-box text-center">
               <div class="icon-box-icon d-inline-block p-4 border border-accent rounded-circle mb-4">
-              <i className="fab fa-facebook"></i>
+              <FontAwesomeIcon icon="fa-solid fa-award" size='xl' style={{color: "#000000",}} />
               </div>
               <div class="icon-box-content">
                 <h4 class="card-title">Daily offers</h4>
@@ -82,7 +80,7 @@ console.log(books);
           <div class="col-lg-3 col-md-6 pb-3">
             <div class="icon-box text-center">
               <div class="icon-box-icon d-inline-block p-4 border border-accent rounded-circle mb-4">
-              <i className="fab fa-facebook"></i>
+              <FontAwesomeIcon icon="fa-solid fa-hand-holding-dollar" size='xl' style={{color: "#000000",}} />
               </div>
               <div class="icon-box-content">
                 <h4 class="card-title">100% secure payment</h4>
@@ -93,10 +91,9 @@ console.log(books);
         </div>
       </div>
     </section>
-<br /><br /><br />
 
 
-<section id="about">
+<section id="about" style={{paddingTop:'3rem'}}>
       <div class="container">
         <div class="row position-relative">
           <div class="col-lg-8">
@@ -128,7 +125,6 @@ console.log(books);
             </li>
           ))}
             </div>
-            <br /><br />
         </>
            
   )

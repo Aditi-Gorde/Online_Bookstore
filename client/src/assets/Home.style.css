@@ -1,6 +1,6 @@
 .div1 {
  background-color: rgb(222, 214, 201);
-
+  margin-top: 2rem;
 }
 
 .container {
@@ -16,24 +16,13 @@
     flex: 1;
     width: 22rem;
     height: 26rem;
+    margin-left: 1rem;
   }
   
   .text {
     flex: 1; 
     padding: 30px; 
   }
-  
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-    }
-  
-    .image,
-    .text {
-      max-width: 100%; 
-    }
-  }
-
   li {
     list-style: none;
     padding: 0;
@@ -42,12 +31,19 @@
 
 .book-container {
     padding: 2rem;
-    padding-top: 4rem;
+    padding-top: 1rem;
     display:flex;
     justify-content: space-between;
 }
 
 @media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .image,
+  .text {
+    max-width: 100%; 
+  }
     .book-container {
       flex-direction: column;
       justify-content: space-between;

@@ -1,14 +1,17 @@
 .signUp_container {
-    background-image: url( "https://img.freepik.com/premium-photo/banner-with-books-stack-border-copy-space-bookstore-ad-white-background_361816-3775.jpg");
+    background-image: url( "https://images.unsplash.com/photo-1528731708534-816fe59f90cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
     background-size: cover; 
     background-repeat: no-repeat;
     background-position: center center;
 }
 
+.signUp_container ::before {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 :root {
   --borderColor: #707071;
-  --btnHoverColor: #eb003f;
-  --formHeading-color: #fc5c65;
+  --btnHoverColor: #b76c80;
 }
 
 .signUp {
@@ -110,6 +113,6 @@ input:focus {
 
 .validation-error {
   font-size: 0.8rem;
-  color: red;
+  color: red
 }
 

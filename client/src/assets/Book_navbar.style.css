@@ -41,3 +41,9 @@
   background-color: rgb(50, 48, 48);
   color: #fff;
 }
+
+@media (max-width: 768px) {
+.navbar-item{
+  margin-top: 1.5rem;
+}
+}

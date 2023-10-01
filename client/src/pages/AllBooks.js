@@ -32,7 +32,7 @@ function AllBooks() {
       <div className="row">
         {books.map((book,i) => (
           <li key={i}>
-           <PaginatedBook book={book} />
+           <SingleBook book={book} />
           </li>
         ))}
       </div>

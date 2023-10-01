@@ -10,6 +10,7 @@ import {Cart} from "./pages/Cart"
 import Footer from './components/Footer';
 import AllBooks from './pages/AllBooks.js';
 import About from './pages/About.js';
+import BookData from './pages/BookData.js';
 
 function App() {
   const { user } = useAuthContext();
@@ -27,6 +28,7 @@ function App() {
     <Route path="/About" element={<About />} />
     <Route path="/Cart" element={<Cart />} exact />
     <Route path="/AllBooks" element={<AllBooks />} exact />
+    <Route path="/AllBooks/:id" element={<BookData />} exact />
   </Routes>
   {/* <AllBooks /> */}
   <Footer />

@@ -13,6 +13,8 @@
     width : 45rem;
 }
 
+
+
 .sub {
     background-color: rgb(222, 214, 201);
 }
@@ -37,4 +39,21 @@
     align-items: end;
     font-family:'Times New Roman', Times, serif;
     font-size: 2.5rem;
+}
+
+.rev_inp {
+    width: 100%;
+}
+
+
+@media (max-width: 768px) {
+    .rev_inp {
+     width: 50%;
+    }
+    .rev-form {
+        padding-left: 0.5rem;
+    }
+    .rev-start {
+        padding-left: 0.5rem;
+    }
 }

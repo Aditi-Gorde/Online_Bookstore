@@ -10,6 +10,7 @@ import { encrypt } from '../utils'
 import { ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 
+
 const initialValues = {
     email: "",
     password: ""
@@ -39,7 +40,7 @@ export const Login = () => {
     return (
         <div className='login'>
 
-            <img src="" className='loginImage' alt=''/>
+            <img src="https://images.unsplash.com/photo-1667929048193-4fef49b0ba0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" style={{marginLeft:'2rem'}} className='loginImage' alt=''/>
 
             <div className='login_content'>
                 <h1>Login</h1>

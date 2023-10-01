@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
 import '../assets/SingleBook.style.css';
+import { red } from '@mui/material/colors';
 
 function SingleBook({book}) {
   const history = useNavigate();
@@ -59,24 +60,12 @@ function SingleBook({book}) {
         <ListGroup.Item>Authors : {book.authors}</ListGroup.Item>
         <ListGroup.Item>Rating : {book.average_rating }</ListGroup.Item>
         <ListGroup.Item>Price : {book.num_pages}</ListGroup.Item>
+        <Link to={`/AllBooks/${book._id}`}>Details</Link>
       </ListGroup>
       <Card.Body style={{paddingTop:'1.5rem'}}>
-      <Dropdown onSelect={handleDropdownSelect} >
-          <Dropdown.Toggle variant="success" id="dropdown-basic">
-            {selectedOption}
-          </Dropdown.Toggle>
-
-          <Dropdown.Menu>
-            <Dropdown.Item eventKey="Update">
-            <Link to={`/BookDetail/${_id}`} className="nav_signup">
-                Update
-              </Link>
-            </Dropdown.Item>
-            <Dropdown.Item onClick={deleteHandler} eventKey="Delete">Delete</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-      {/* <Card.Link href="#"><button class="btn" type="submit">Edit</button></Card.Link> */}
         <Card.Link href='' style={{marginLeft:'4rem'}}><button onClick={handleCart} class="btn ac" type="submit" >Add to cart</button></Card.Link>
+       
+        
       </Card.Body>
     </Card>
   );

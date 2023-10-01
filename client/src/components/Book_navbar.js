@@ -8,7 +8,7 @@ import { useAuthContext } from "../hooks/useAuthContext";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../assets/Book_navbar.style.css'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function Book_navbar() {
 
@@ -28,49 +28,55 @@ export default function Book_navbar() {
   };
   return (
     <div>
-       <nav class="navbar navbar-expand-lg bg-body-tertiary" style={{padding:'1rem'}}>
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">Booktopia</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+       <nav className="navbar navbar-expand-lg bg-body-tertiary  " style={{padding:'1rem'}}>
+  <div className="container-fluid">
+    <a className="navbar-brand" href="/">Booktopia</a>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-disabled="true">
+        <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-disabled="true">
             Edit
           </a>
-          <ul class="dropdown-menu">
+          <ul className="dropdown-menu">
             <li><NavLink to="/AddBook" className="dropdown-item">
                 Add Book
               </NavLink></li>
-            <li><a class="dropdown-item" href="/AllBooks" onClick={editClick}>Update</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="/AllBooks" onClick={editClick}>Delete</a></li>
+              <li><hr className="dropdown-divider" /></li>
+            <li><a className="dropdown-item" href="/AllBooks" onClick={editClick}>Update</a></li>
+            <li><a className="dropdown-item" href="/AllBooks" onClick={editClick}>Delete</a></li>
             <ToastContainer />
           </ul>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-        <button class="btn" type="submit">Search</button>
-      </form>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+     
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
-          <li class="nav-item">
-            <a class="nav-link" href={`/Cart`}>Cart</a>
+          <li className="nav-item">
+            <a className="nav-link" href={`/Cart`}><FontAwesomeIcon icon="fa-solid fa-cart-shopping" style={{color: "#000000",}} />  Cart</a>
+            
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/About">About Us</a>
+          
+          <li className="nav-item">
+            <a className="nav-link" href="/AllBooks">All Books</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/About">About Us</a>
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
+      <form className="d-flex align-items-center" role="search">
+        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+        <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" style={{color: "#050505",marginRight:'1rem'}} />
+      </form>
+      <div className="navbar-end" >
 
           {user ? (
-            <div className="navbar-item">
+            <div className="navbar-item" >
               <NavLink to="/" className="nav_login" onClick={handleClick}>
                 Log Out
               </NavLink>

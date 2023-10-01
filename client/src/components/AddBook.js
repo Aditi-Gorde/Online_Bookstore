@@ -12,7 +12,8 @@ import {
   import axios from "axios"; 
   import React, { useState } from "react";
   import { useNavigate } from "react-router-dom";
-  
+  import '../assets/AddBook.style.css';
+
   const AddBook = () => {
     const history = useNavigate();
     const [inputs, setInputs] = useState({
@@ -65,6 +66,8 @@ import {
     };
   
     return (
+      <div className="AddBook-main">
+        <h3 className="heading">Add Book</h3>
       <form onSubmit={handleSubmit} >
         <Box
           display="flex"
@@ -185,13 +188,13 @@ import {
                fullWidth
                variant="outlined"
                name="publisher"
-          />
+          /> <br />
           
-          <Button variant="contained" type="submit">
-            Add Book
-          </Button>
+
+          <button class="btn ac" type="submit" >ADD BOOK</button>
         </Box>
       </form>
+      </div>
     );
   };
   
