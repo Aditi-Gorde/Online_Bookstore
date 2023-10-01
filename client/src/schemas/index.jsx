@@ -12,17 +12,12 @@ export const signUpSchema = Yup.object({
     .matches(/^\+?\d{1,3}[-.\s]?\d{3}[-.\s]?\d{3}[-.\s]?\d{4}$/, 'Invalid phone number')
     .required('This is a required field'),
     password: Yup.string().min(6, 'Password must be 6 characters long').matches(/[0-9]/, 'Password requires a number').matches(/[a-z]/, 'Password requires a lowercase letter').matches(/[A-Z]/, 'Password requires an uppercase letter').matches(/[^\w]/, 'Password requires a symbol').required("This is a required field"),
-    confirmPassword: Yup.string().required("This is a required field").oneOf([Yup.ref('password'), null], 'Must match "password" field value'),
-    aadhar: Yup.string().matches(aadharRegExp, 'Invalid Aadhaar Number').required("This is a required field")
+    confirmPassword: Yup.string().required("This is a required field").oneOf([Yup.ref('password'), null], 'Must match "password" field value')
 })
 
 export const loginSchema = Yup.object({
     email: Yup.string().email().required("This is a required field"),
     password: Yup.string().required("This is a required field")
-})
-
-export const aadharSchema = Yup.object({
-    otp: Yup.number().min(6).max(6).required("This is a required field"),
 })
 
 export const resetPassSchema = Yup.object({

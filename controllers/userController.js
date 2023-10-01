@@ -1,4 +1,6 @@
-const crypto = require("crypto-js");
+// require('dotenv').config();
+
+const crypto = require('crypto-js');
 
 const asyncHandler = require("express-async-handler");
 
@@ -9,6 +11,11 @@ const jwt = require("jsonwebtoken");
 const User = require("../model/userModel");
 
 const OldToken = require("../model/OldToken");
+
+const decrypt_key = "6Le6ZpMlAAAAAFyL-GFTo2UZykHJ5mpbQmWgOnls";
+
+const access_token = "onetrade123"
+
 
 // const transporter = nodemailer.createTransport({
 //   service: "gmail",
@@ -40,16 +47,16 @@ const signupUser = asyncHandler(async (req, res) => {
   ) {
     res.json(412, { message: "One or more of the required fields are empty" }); //res.status(400); //throw new Error("All fields are mandatory!");
   }
-console.log(firstname);
   
   const decrypted_pass = crypto.AES.decrypt(
     password,
-    process.env.DECRYPT_KEY
+    decrypt_key
   ).toString(crypto.enc.Utf8);
   const decrypted_confirm_pass = crypto.AES.decrypt(
     confirmPassword,
-    process.env.DECRYPT_KEY
+    decrypt_key
   ).toString(crypto.enc.Utf8);
+
   const userAvailable = await User.findOne({ email });
 
   if (userAvailable) {
@@ -68,7 +75,6 @@ console.log(firstname);
 
   const hashedPassword = await bcrypt.hash(decrypted_pass, 10);
 
-  //console.log("Hashed Password: ", hashedPassword);
 
   const user = await User.create({
     firstname,
@@ -82,11 +88,6 @@ console.log(firstname);
     password: hashedPassword,
   });
 
-  // const user_portfolio =  await portfolio.create({
-  //   email
-  // })
-
-  //console.log(`User created ${user}`);
 
   if (user) {
     res.status(200).json({ _id: user.id, email: user.email });
@@ -114,7 +115,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
   const decrypt_password = crypto.AES.decrypt(
     password,
-    process.env.DECRYPT_KEY
+    decrypt_key
   ).toString(crypto.enc.Utf8);
 
   if (user && (await bcrypt.compare(decrypt_password, user.password))) {
@@ -129,7 +130,7 @@ const loginUser = asyncHandler(async (req, res) => {
         },
       },
 
-      process.env.ACCESS_TOKEN_SECERT,
+      access_token,
 
       { expiresIn: "2h" }
     );

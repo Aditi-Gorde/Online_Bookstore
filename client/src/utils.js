@@ -1,7 +1,7 @@
 import * as CryptoJS from "crypto-js";
 
-const secretKey = process.env.REACT_APP_SECRET_KEY
-  ? process.env.REACT_APP_SECRET_KEY
+const secretKey = "6Le6ZpMlAAAAAFyL-GFTo2UZykHJ5mpbQmWgOnls"
+  ? "6Le6ZpMlAAAAAFyL-GFTo2UZykHJ5mpbQmWgOnls"
   : "12345";
 
 export const encrypt = (plainText) => {
@@ -9,4 +9,4 @@ export const encrypt = (plainText) => {
   return cipherText;
 };
 
-export const backendApi = process.env.REACT_APP_API_URL;
+//export const backendApi = process.env.REACT_APP_API_URL;

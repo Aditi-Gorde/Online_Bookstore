@@ -112,7 +112,7 @@ export const SignUp = () => {
         })
     
     return (
-        <>
+        <div className='signUp_container'>
         <div className='signUp'>
             <h1>SIGN UP</h1>
             <form onSubmit={handleSubmit}>
@@ -172,7 +172,7 @@ export const SignUp = () => {
             </form>
             <ToastContainer />
         </div>
-</>
+</div>
     );
 
 }

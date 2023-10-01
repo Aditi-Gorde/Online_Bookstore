@@ -4,14 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-// import { backendApi } from "../utils";
 
 export const useLogin = () => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
   const { dispatch } = useAuthContext();
   const navigate = useNavigate();
-  const backendApi = process.env.REACT_APP_API_URL;
+  const backendApi = "http://localhost:5000";
 
   const login = async (email, password) => {
     setIsLoading(true);

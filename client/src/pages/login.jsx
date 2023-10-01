@@ -2,7 +2,6 @@
 
 import React from 'react'
 import '../assets/login.css'
-//import loginImg from '../assets/utils/loginImg.png'
 import { useFormik } from "formik"
 import { Link } from 'react-router-dom'
 import { useLogin } from '../hooks/useLogin'
@@ -10,8 +9,6 @@ import { loginSchema } from '../schemas'
 import { encrypt } from '../utils'
 import { ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
-
-
 
 const initialValues = {
     email: "",

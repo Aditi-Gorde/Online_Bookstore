@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import SingleBook from '../components/SingleBook';
 import '../assets/AllBooks.style.css'
+import PaginatedBook from '../components/PaginatedBook';
 
 function AllBooks() {
   const [books, setBooks] = useState([]);
@@ -27,11 +28,15 @@ function AllBooks() {
     <div>
       <h2 className='heading'>Book List</h2>
       <div className='book-container'>
+      <div className="container">
+      <div className="row">
         {books.map((book,i) => (
           <li key={i}>
-           <SingleBook book={book} />
+           <PaginatedBook book={book} />
           </li>
         ))}
+      </div>
+      </div>
       </div>
       <div>
         <button onClick={() => setCurrentPage(currentPage - 1)}>Previous</button>
