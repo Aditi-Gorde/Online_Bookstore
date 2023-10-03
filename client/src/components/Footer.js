@@ -18,18 +18,18 @@ function Footer() {
           <div className="col-md-4">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/books">Books</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/Cart">Cart</a></li>
+              <li><NavLink to="/">Home</NavLink></li>
+              <li><NavLink to="/books">Books</NavLink></li>
+              <li><NavLink to="/about">About</NavLink></li>
+              <li><NavLink to="/Cart">Cart</NavLink></li>
             </ul>
           </div>
           <div className="col-md-4">
             <h3>Connect with Us</h3>
             <ul className="social-icons">
-              <li><a href="#"><i className="fab fa-facebook"></i></a></li>
-              <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i className="fab fa-instagram"></i></a></li>
+              <li><NavLink to="#"><i className="fab fa-facebook"></i></NavLink></li>
+              <li><NavLink to="#"><i className="fab fa-twitter"></i></NavLink></li>
+              <li><NavLink to="#"><i className="fab fa-instagram"></i></NavLink></li>
             </ul>
           </div>
         </div>
