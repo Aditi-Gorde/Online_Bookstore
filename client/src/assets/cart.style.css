@@ -35,11 +35,36 @@ li {
     margin: 0;
   }
 
-.book-container {
-    padding: 2rem;
-    padding-top: 4rem;
-    display:flex;
-    justify-content:space-between;
+.cartContainer {
+    margin-left: 5rem;
+    margin-right: 8rem;
+}
+
+ul {
+    margin-left: 3rem;
+}
+
+.cartTotal {
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.cartTotalPrice {
+    margin-left: 4rem;
+}
+
+.cartStatement {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+.reserveButton {
+    margin-left: 50%;
+    margin-top: 2rem;
+    background-color: rgb(247, 171, 209);
 }
 
 @media (max-width: 768px) {

@@ -1,13 +1,15 @@
 //Item to display in cart
 
-import React from "react";
+import React, { useContext } from "react";
 import "../assets/cart.style.css"
 import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
+import CartContext from "../context/CartContext";
 
 function CartItem({book}) {
     const history = useNavigate();
     const _id = book._id;
+    const { removeFromCart } = useContext(CartContext)
     const deleteHandler = async () => {
       await axios
         .delete(`http://localhost:5000/Cart/${_id}`)
@@ -18,15 +20,14 @@ function CartItem({book}) {
     return(
                 <>
                     <div className="items">
-                    <div className="item-img">
+                    {/* <div className="item-img">
                         <img src="../public/images/post-item4.jpg" alt="item image" className="cart-img" />
-                    </div>
-
+                    </div> */}
                     <div className="item-content">
                         <h2>{book.title}</h2>
                         <p>{book.authors}</p>
-                        <h3 className="price">Price</h3>
-                        <button onClick={deleteHandler} class="btn ac" type="submit" >Remove</button>
+                        <h3 className="price">Price: {book.price}</h3>
+                        <button onClick={()=>removeFromCart(book._id)} class="btn ac" type="submit" >Remove</button>
                     </div>
                 </div>
                
