@@ -2,6 +2,7 @@
 
 import React from 'react';
 import '../assets/Footer.style.css';
+import { NavLink } from "react-router-dom";
 import 'font-awesome/css/font-awesome.min.css';
 
 
