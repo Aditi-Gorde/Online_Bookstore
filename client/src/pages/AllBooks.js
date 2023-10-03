@@ -18,7 +18,7 @@ function AllBooks() {
     // Fetch books from the API
     //?page=${currentPage}
     axios
-      .get(`http://localhost:5000/books/?page=${currentPage}`)
+      .get(`process.env.backend_url/books/?page=${currentPage}`)
       .then((response) => {
         setBooks(response.data.books);
       })

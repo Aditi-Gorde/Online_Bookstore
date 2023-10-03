@@ -17,7 +17,7 @@ export default function Search({ onSearch }) {
 
     const handleSearch = async () => {
         try {
-            await axios.get(`http://localhost:5000/books?question=${query}`)
+            await axios.get(`process.env.backend_url/books?question=${query}`)
             .then((response) => {
                 onSearch(response.data)
             });

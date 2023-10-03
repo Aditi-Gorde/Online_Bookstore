@@ -16,7 +16,7 @@ export default function Home() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/books')
+    axios.get('process.env.backend_url/books')
       .then((response) => {
         setBooks(response.data.books);
         console.log(books);

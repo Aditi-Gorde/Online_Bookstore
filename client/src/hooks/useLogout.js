@@ -4,7 +4,7 @@ import { useAuthContext } from "./useAuthContext";
 
 export const useLogout = () => {
   const { dispatch } = useAuthContext();
-  const backendApi = "http://localhost:5000";
+  const backendApi = "process.env.backend_url";
 
   const logout = async (token) => {
     try {

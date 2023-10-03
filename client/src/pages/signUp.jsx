@@ -25,7 +25,7 @@ const initialValues = {
 
 export const SignUp = () => {
 
-    const backendApi = "http://localhost:5000";
+    const backendApi = "process.env.backend_url";
     console.log(backendApi)
 
     const navigate = useNavigate()

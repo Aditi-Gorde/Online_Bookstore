@@ -19,7 +19,7 @@ function SingleBook({ book }) {
   const _id = book._id;
   const deleteHandler = async () => {
     await axios
-      .delete(`http://localhost:5000/books/${_id}`)
+      .delete(`process.env.backend_url/books/${_id}`)
       .then((res) => res.data)
       .then(() => history("/login"))
       .then(() => history("/"))

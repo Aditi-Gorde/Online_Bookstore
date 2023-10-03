@@ -41,7 +41,7 @@ const AddBook = () => {
 
   const sendRequest = async () => {
     await axios
-      .post("http://localhost:5000/books", {
+      .post("process.env.backend_url/books", {
 
         bookID:Number(inputs.bookID),
         title:String(inputs.title),
