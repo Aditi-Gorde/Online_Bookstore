@@ -36,7 +36,7 @@ console.log(books);
                   <img className='mainImg' src={process.env.PUBLIC_URL + '/images/post-item4.jpg'}alt="Image" />
               </div>
               <div className="text">
-              <h2 className='homeH2'>Welcome to </h2>
+              <h2 className='homeH2'>Welcome to INKSTORY </h2>
               <p>Discover, read, and connect with your favorite books and authors. Explore a diverse collection, join discussions, and enjoy reading anywhere, anytime. Start your reading journey today and dive into a world of stories.Join our passionate community of readers and writers, and start your literary adventure today.</p>
               </div>
             </div>
@@ -51,7 +51,7 @@ console.log(books);
               </span>
               <div class="icon-box-content">
                 <h4 class="card-title">Free delivery</h4>
-                <p>Consectetur adipi elit lorem ipsumcon sectetur dolor sit amet.</p>
+                <p>"Enjoy free, fast, and convenient delivery on all your favorite books!"</p>
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@ console.log(books);
               </div>
               <div class="icon-box-content">
                 <h4 class="card-title">Quality guarantee</h4>
-                <p>Dolor sit amet elit lorem orem ipsu mcons ectetur adipi elit.</p>
+                <p>"Discover quality guaranteed - every book, every time."</p>
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@ console.log(books);
               </div>
               <div class="icon-box-content">
                 <h4 class="card-title">Daily offers</h4>
-                <p>Amet consectetur adipi elit loreme ipsum dolor sit.</p>
+                <p>"Explore our daily offers and uncover new book treasures every day!"</p>
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@ console.log(books);
               </div>
               <div class="icon-box-content">
                 <h4 class="card-title">100% secure payment</h4>
-                <p>Rem adipi elit lopsum dolor sit amet, consectetur adipi elit.</p>
+                <p>"Shop with confidence! Your payments are 100% secure with us."</p>
               </div>
             </div>
           </div>
@@ -103,10 +103,9 @@ console.log(books);
           </div>
           <div class="about-content bg-gray col-lg-4 m-auto top-0 end-0 bottom-0">
             <h3 class="py-3">Who are we</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae ducimus doloribus provident quidem molestias! Dolorum animi distinctio illo error possimus, ex consequatur, obcaecati nisi suscipit impedit aliquid fugit ipsa aut.
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita esse culpa consequuntur porro labore
+            <p>"We are more than just an online bookstore; we are your literary sanctuary. Our passion for books drives us to curate a diverse collection, catering to every reader's taste and preference. With a commitment to quality and customer satisfaction, we strive to provide you with a seamless and enjoyable reading experience.Join us on this literary journey as we connect readers with the magic of words, one page at a time."
             </p>
-            <a href="about.html" class="btn">About us →</a>
+            <a href="/About" class="btn">About us →</a>
           </div>
         </div>
       </div>
@@ -115,7 +114,7 @@ console.log(books);
       <div class="container display-header d-flex flex-wrap justify-content-between pb-4">
         <h3 >Best selling Items</h3>
         <div class="btn-right d-flex flex-wrap align-items-center">
-          <a href="/AllBooks" class="btn me-5" style={{fontSize:'1.5rem'}}>View all items →</a>
+          <a href="/AllBooks" class="btn me-5" style={{fontSize:'1.2rem'}}>View all items →</a>
         </div>
       </div>
       <div className='book-container'>

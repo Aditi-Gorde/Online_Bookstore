@@ -26,15 +26,9 @@ const initialValues = {
 export const SignUp = () => {
 
     const backendApi = "http://localhost:5000";
-     console.log(backendApi)
-
-
-    // const captchaRef = useRef(null)
-    // const [error, setError] = useState('')
-
+    console.log(backendApi)
 
     const navigate = useNavigate()
-
     const navigateToLogin = () => {
         navigate("/login")
     }
@@ -43,16 +37,9 @@ export const SignUp = () => {
         initialValues,
         validationSchema: signUpSchema,
         onSubmit: async ({ firstName, lastName, phone, email, password, confirmPassword }) => {
-            // e.preventDefault();
-            //console.log(values)
-            // const token = await captchaRef.current.getValue();
-            // captchaRef.current.reset();
 
             const encryptedPassword = encrypt(password)
             const encryptedConfirmPassword = encrypt(confirmPassword)
-
-            //console.log("encryptedPassword: " + encryptedPassword)
-            //console.log("encryptedConfirmPassword: " + encryptedConfirmPassword)
 
             try {
                 const res1 = await axios.post(`${backendApi}/users/signup`, {
@@ -64,7 +51,6 @@ export const SignUp = () => {
                     confirmPassword: encryptedConfirmPassword
                 })
                 if (res1.status === 200) {
-                    //console.log("Signup successful");
                    
                     toast.success("Signup Successful!", {
                         position: "top-right",
@@ -82,7 +68,6 @@ export const SignUp = () => {
                       }, 1000); 
                 }
                 else {
-                    //console.log("Error signing up");
                     toast.error("Something went wrong", {
                         position: "top-right",
                         autoClose: 5000,
@@ -153,14 +138,8 @@ export const SignUp = () => {
                     <input type='password' name='confirmPassword' placeholder='Confirm Password' value={values.confirmPassword} onChange={handleChange} onBlur={handleBlur} />
                     {errors.confirmPassword && touched.confirmPassword ? (<span className='validation-error'>{errors.confirmPassword}</span>) : null}
                 </div>
-                {/* <div className='signUp_account'>
-                    <label className='signUp_label' htmlFor="aadhar">Aadhaar Number<span className='req'>*</span></label>
-                    <input type='aadhar' name='aadhar' placeholder='Enter Aadhaar Number' value={values.aadhar} onChange={handleChange} onBlur={handleBlur} />
-                    {errors.aadhar && touched.aadhar ? (<span className='validation-error'>{errors.aadhar}</span>) : null}
-                </div> */}
 
                 <div className='signUp_formDiv-names'>
-                    {/* <ReCAPTCHA sitekey={process.env.REACT_APP_SITE_KEY} ref={captchaRef} /> */}
                     <button type='submit' className='btn_solid'>Submit</button>
                 </div>
 

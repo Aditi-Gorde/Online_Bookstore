@@ -26,7 +26,7 @@ function About(){
                 </div>
                 </div>
  
-          <p style={{padding:'0 2rem',textAlign:'justify'}}>At BookTopia, we're passionate about books and the magic they bring to our lives. As avid readers and lovers of literature, we've created a curated collection of books that cater to all tastes and ages. <br /> Our mission is simple: to connect people with the joy of reading. Whether you're seeking knowledge, entertainment, or inspiration, our shelves are stocked with carefully selected titles to transport you to new worlds and spark your imagination. <br /> We're more than just a bookstore, we're a community of book enthusiasts. Join us for book clubs, author events, and discussions to share your love of reading.We are committed to promoting the joy of reading and the power of knowledge. We believe that books have the incredible ability to transport us to different worlds, expand our horizons, and ignite our imagination. Our carefully curated collection reflects our dedication to bringing you the finest literature and educational resources. <br /> Thank you for being a part of our literary journey. Explore our shelves, discover new stories, and let's celebrate the world of books together.</p>
+          <p style={{padding:'0 2rem',textAlign:'justify'}}>At INKSTORY, we're passionate about books and the magic they bring to our lives. As avid readers and lovers of literature, we've created a curated collection of books that cater to all tastes and ages. <br /> Our mission is simple: to connect people with the joy of reading. Whether you're seeking knowledge, entertainment, or inspiration, our shelves are stocked with carefully selected titles to transport you to new worlds and spark your imagination. <br /> We're more than just a bookstore, we're a community of book enthusiasts. Join us for book clubs, author events, and discussions to share your love of reading.We are committed to promoting the joy of reading and the power of knowledge. We believe that books have the incredible ability to transport us to different worlds, expand our horizons, and ignite our imagination. Our carefully curated collection reflects our dedication to bringing you the finest literature and educational resources. <br /> Thank you for being a part of our literary journey. Explore our shelves, discover new stories, and let's celebrate the world of books together.</p>
     </section> <br /><br />
 
     <section id="newsletter" class="news-outer">
@@ -38,7 +38,7 @@ function About(){
               <p>Get latest news, updates and deals directly mailed to your inbox.</p> 				
             </div>
             <form class="col-lg-6 col-md-12 d-flex align-items-center">
-              <div class="d-flex w-75 border-bottom border-dark py-2">
+              <div class="d-flex w-75 border-dark py-2">
                 <button class="btn border-2 p-2" type="button" fdprocessedid="rjwr4l">Subscribe</button>
               </div>
             </form>

@@ -59,8 +59,6 @@ export const Login = () => {
                     
                     <div className='login_forgot'>
                         <button type='submit' disabled={isLoading} className='btn_solid'>Submit</button>
-                        {error && <span className='err'>{error}</span>}
-                    <span>Forgot Password?<Link to='/resetpasswordotp' state={{mail: values.email}}>Reset it</Link></span>
                     </div>
                     
                 </form>
