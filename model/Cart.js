@@ -6,53 +6,26 @@ const Schema = mongoose.Schema;
 
   const cartSchema = new Schema({
 
-    bookID : {
-        type: Number,
+    userID: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
     },
-
-    title : {
-        type: String,
+    books:[{
+        bookID: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Book"
+        },
+        price: {
+            type:Number
+        }
+    }],
+    totalPrice: {
+        type: Number
     },
-
-    authors : {
-        type: String,
-    },
-
-    average_rating : {
-        type: Number,
-    },
-
-    isbn : {
-        type: String,
-    },
-
-    isbn13 : {
-        type: Number,
-    },
-
-    language_code : {
-        type: String,
-    },
-
-    num_pages : {
-        type: Number,
-    },
-
-    ratings_count : {
-        type: Number,
-    },
-
-    text_reviews_count : {
-        type: Number,
-    },
-
-    publication_date : {
+    estDeliveryDate: {
         type: Date,
-    },
-
-    publisher : {
-        type: String,
-    },
+        default: () => new Date(+new Date() + 3*24*60*60*1000)
+    }
 
   });
 

@@ -8,6 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faFontAwesome } from '@fortawesome/free-brands-svg-icons'
+import CartState from './context/CartState';
 
 library.add(fas, faTwitter, faFontAwesome)
 
@@ -15,9 +16,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AuthContextProvider>
+      <CartState>
       <BrowserRouter>
       <App />
       </BrowserRouter>
+      </CartState>
     </AuthContextProvider>
   </React.StrictMode>
 );

@@ -26,7 +26,8 @@ const getAllBooks = async (req, res, next) => {
       ratings_count,
       text_reviews_count,
       publication_date,
-      publisher, } = req.body;
+      publisher,
+      price } = req.body;
     let book;
     try {
       book = new Cart({
@@ -42,6 +43,7 @@ const getAllBooks = async (req, res, next) => {
       text_reviews_count,
       publication_date,
       publisher,
+      price
       });
       await book.save();
     } catch (err) {
