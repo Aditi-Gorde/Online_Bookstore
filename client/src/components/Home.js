@@ -34,7 +34,7 @@ console.log(books);
         <>
             <div className="container div1">
               <div className="image">
-                  <img className='mainImg' src={process.env.PUBLIC_URL + '/images/post-item4.jpg'} />
+                  <img className='mainImg' src={process.env.PUBLIC_URL + '/images/post-item4.jpg'} alt='demo book' />
               </div>
               <div className="text">
               <h2 className='homeH2'>Welcome to INKSTORY </h2>
