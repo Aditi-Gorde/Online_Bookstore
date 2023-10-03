@@ -38,10 +38,10 @@ function SingleBook({ book }) {
   const [buttonName, setButtonName] = useState('Add to cart')
 
   return (
-    <Card style={{ width:'15rem' }}>
+    <Card style={{ width:'90%'}}>
       <Card.Img variant="top" src="https://i.pinimg.com/originals/a4/0e/8f/a40e8f3a56c14f0ddb988757cdf4372b.jpg" />
       <Card.Body>
-        <Card.Title style={{ fontSize: 16, height: '3rem' }}><strong>{book.title}</strong></Card.Title>
+        <Card.Title style={{ fontSize: 16, height: '5rem' }}><strong>{book.title}</strong></Card.Title>
       
       </Card.Body>
       <ListGroup className="list-group-flush">

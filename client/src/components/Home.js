@@ -31,7 +31,7 @@ console.log(books);
   if (!Array.isArray(books)) {
     return <div>No books available</div>;
   }
-  const limitedBooks = books.slice(5, 9);
+  const limitedBooks = books.slice(5, 8);
   return (
         <>
             <div className="container div1">
@@ -108,7 +108,7 @@ console.log(books);
             <h3 class="py-3">Who are we</h3>
             <p>"We are more than just an online bookstore; we are your literary sanctuary. Our passion for books drives us to curate a diverse collection, catering to every reader's taste and preference. With a commitment to quality and customer satisfaction, we strive to provide you with a seamless and enjoyable reading experience.Join us on this literary journey as we connect readers with the magic of words, one page at a time."
             </p>
-            <NavLink to="/About" class="btn">About us →</NavLink>
+            <NavLink to="/About" class="btn" style={{color:'black'}}>About us →</NavLink>
           </div>
         </div>
       </div>
@@ -117,24 +117,24 @@ console.log(books);
       <div class="container display-header d-flex flex-wrap justify-content-between pb-4">
         <h3 >Best selling Items</h3>
         <div class="btn-right d-flex flex-wrap align-items-center">
-          <NavLink to="/AllBooks" class="btn me-5" style={{fontSize:'1.2rem'}}>View all items →</NavLink>
+          <NavLink to="/AllBooks" class="btn me-5" style={{fontSize:'1.2rem',color:'black'}}>View all items →</NavLink>
         </div>
       </div>
-      <div className='book-container'>
-      <Row lg={3}>
+      <div className='book-container flex-lg-nowrap flex-wrap' style={{width:'25%!',height:'auto'}}>
+      {/* <Row lg={3} md={2} sm={1} >
             {limitedBooks.map((book, i) => (
-              <Col className='d-flex  mw-100 w-25 mx-auto mb-3'>
-                <li key={i}>
+              <Col className='d-flex mw-100 w-20 mx-auto mb-3'>
+                <li style={{width:'100%'}} key={i}>
                   <SingleBook book={book} className="flex-fill" />
                 </li>
               </Col>
             ))}
-      </Row>
-       {/* {limitedBooks && limitedBooks.map((book, i) => (
+      </Row> */}
+       {limitedBooks && limitedBooks.map((book, i) => (
             <li key={i}>
               <SingleBook book={book} />
             </li>
-          ))} */}
+          ))}
             </div>
         </>
            

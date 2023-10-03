@@ -20,9 +20,9 @@ function CartItem({book}) {
     return(
                 <>
                     <div className="items">
-                    {/* <div className="item-img">
-                        <img src="../public/images/post-item4.jpg" alt="item image" className="cart-img" />
-                    </div> */}
+                    <div className="item-img">
+                        <img src="https://i.pinimg.com/originals/a4/0e/8f/a40e8f3a56c14f0ddb988757cdf4372b.jpg" alt="item image" className="cart-img" />
+                    </div>
                     <div className="item-content">
                         <h2>{book.title}</h2>
                         <p>{book.authors}</p>

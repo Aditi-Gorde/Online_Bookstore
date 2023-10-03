@@ -41,7 +41,7 @@ function AllBooks() {
       <div className='book-container'>
           <Row lg={3}>
             {books.map((book, i) => (
-              <Col className='d-flex mw-100 w-25 mx-auto mb-3'>
+              <Col className='d-flex mw-100 w-20 mx-auto mb-3'>
                 <li key={i}>
                   <SingleBook book={book} className="flex-fill" />
                 </li>
@@ -66,5 +66,3 @@ function AllBooks() {
 }
 
 export default AllBooks;
-//.get(`/api/books?page=${currentPage}`)
-//app.get('/api/books', async (req, res) =>
