@@ -3,13 +3,18 @@
 import Card from 'react-bootstrap/Card';
 import Dropdown from 'react-bootstrap/Dropdown';
 import ListGroup from 'react-bootstrap/ListGroup';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import '../assets/SingleBook.style.css';
 import { red } from '@mui/material/colors';
+import CartContext from '../context/CartContext';
+import { useAuthContext } from '../hooks/useAuthContext';
 
-function SingleBook({book}) {
+function SingleBook({ book }) {
+  const { addToCart } = useContext(CartContext);
+  const { user } = useAuthContext();
+
   const history = useNavigate();
   const _id = book._id;
   const deleteHandler = async () => {
@@ -17,27 +22,12 @@ function SingleBook({book}) {
       .delete(`http://localhost:5000/books/${_id}`)
       .then((res) => res.data)
       .then(() => history("/login"))
-      .then(() => history("/")) 
+      .then(() => history("/"))
   };
 
-  const handleCart = async () => {
-    await axios.post(`http://localhost:5000/Cart`, {
-      bookID:Number(book.bookID),
-      title:String(book.title),
-      authors:String(book.authors),
-      average_rating:Number(book.average_rating),
-      isbn:String(book.isbn),
-      isbn13:Number(book.isbn13),
-      language_code:String(book.language_code),
-      num_pages:Number(book.num_pages),
-      ratings_count:Number(book.ratings_count),
-      text_reviews_count:Number(book.text_reviews_count),
-      publication_date:Date(book.publication_date),
-      publisher:String(book.publisher),
-    })
-    .then((res) => res.data);
-  };
-
+  const updateHandler = async (_id) => {
+    history(`/BookDetail/${_id}`)
+  }
 
   console.log(_id);
   const [selectedOption, setSelectedOption] = useState('Edit');
@@ -45,28 +35,48 @@ function SingleBook({book}) {
   const handleDropdownSelect = (option) => {
     setSelectedOption(option);
   };
+  const [buttonName, setButtonName] = useState('Add to cart')
 
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ boxShadow: '4px' }}>
       <Card.Img variant="top" src="https://i.pinimg.com/originals/a4/0e/8f/a40e8f3a56c14f0ddb988757cdf4372b.jpg" />
       <Card.Body>
-        <Card.Title style={{fontSize:16,height:'5rem'}}><strong>{book.title}</strong></Card.Title>
-        <Card.Text style={{height:'4rem'}}>
+        <Card.Title style={{ fontSize: 16, height: '5rem' }}><strong>{book.title}</strong></Card.Title>
+        <Card.Text style={{ height: '4rem' }}>
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
         <ListGroup.Item>Authors : {book.authors}</ListGroup.Item>
-        <ListGroup.Item>Rating : {book.average_rating }</ListGroup.Item>
-        <ListGroup.Item>Price : {book.num_pages}</ListGroup.Item>
-        <Link to={`/AllBooks/${book._id}`}>Details</Link>
+        <ListGroup.Item>Rating : {book.average_rating}</ListGroup.Item>
+        <ListGroup.Item>Price : {book.price}</ListGroup.Item>
+        {/* <Link to={`/AllBooks/${book._id}`}>Details</Link> */}
+        {user ? (
+          <div className="list-group-flush mx-auto">
+            <ListGroup.Item className='mx-auto mb-1'>
+              <button onClick={(e) => {
+                addToCart(book);
+                e.target.disabled = true
+                setButtonName("Added")
+              }} class="btn ac">{buttonName}</button>
+            </ListGroup.Item>
+            <ListGroup.Item className='mx-auto'>
+              <Dropdown onSelect={handleDropdownSelect} className='mx-auto' >
+                <Dropdown.Toggle variant="warning" id="dropdown-basic">
+                  {selectedOption}
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item eventKey="Update" onClick={() => updateHandler(_id)}>Update</Dropdown.Item>
+                  <Dropdown.Item onClick={() => deleteHandler} eventKey="Delete">Delete</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </ListGroup.Item>
+          </div>
+
+        ) : ''}
+
       </ListGroup>
-      <Card.Body style={{paddingTop:'1.5rem'}}>
-        <Card.Link href='' style={{marginLeft:'4rem'}}><button onClick={handleCart} class="btn ac" type="submit" >Add to cart</button></Card.Link>
-       
-        
-      </Card.Body>
     </Card>
   );
 }
@@ -74,10 +84,3 @@ function SingleBook({book}) {
 //addToCart(books)
 
 export default SingleBook;
-
-{/* <Nav.Item>
-<Nav.Link href="#disabled" disabled>
-  Disabled
-</Nav.Link>
-</Nav.Item>
-{`/Cart/${_id}`} */}

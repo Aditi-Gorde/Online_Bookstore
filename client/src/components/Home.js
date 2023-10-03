@@ -7,6 +7,7 @@ import SingleBook from './SingleBook'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Row, Col } from 'react-bootstrap';
 
 
 export default function Home() {
@@ -118,11 +119,20 @@ console.log(books);
         </div>
       </div>
       <div className='book-container'>
-       {limitedBooks && limitedBooks.map((book, i) => (
+      <Row lg={3}>
+            {limitedBooks.map((book, i) => (
+              <Col className='d-flex  mw-100 w-25 mx-auto mb-3'>
+                <li key={i}>
+                  <SingleBook book={book} className="flex-fill" />
+                </li>
+              </Col>
+            ))}
+      </Row>
+       {/* {limitedBooks && limitedBooks.map((book, i) => (
             <li key={i}>
               <SingleBook book={book} />
             </li>
-          ))}
+          ))} */}
             </div>
         </>
            

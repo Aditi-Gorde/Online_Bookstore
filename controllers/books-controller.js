@@ -40,7 +40,8 @@ const addBook = async (req, res, next) => {
     ratings_count,
     text_reviews_count,
     publication_date,
-    publisher, } = req.body;
+    publisher,
+    price, } = req.body;
   let book;
   try {
     book = new Book({
@@ -56,6 +57,7 @@ const addBook = async (req, res, next) => {
     text_reviews_count,
     publication_date,
     publisher,
+    price
     });
     await book.save();
   } catch (err) {
@@ -82,7 +84,8 @@ const updateBook = async (req, res, next) => {
     ratings_count,
     text_reviews_count,
     publication_date,
-    publisher, } = req.body;
+    publisher,
+    price } = req.body;
   let book;
   try {
     book = await Book.findByIdAndUpdate(id, {
@@ -98,6 +101,7 @@ const updateBook = async (req, res, next) => {
     text_reviews_count,
     publication_date,
     publisher,
+    price
     });
     book = await book.save();
   } catch (err) {
@@ -126,15 +130,27 @@ const deleteBook = async (req, res, next) => {
 
 const searchBook = async (req, res,next) => {
   const page = parseInt(req.query.page) || 1; // Page number (default: 1)
-  const perPage = parseInt(req.query.perPage) || 10; // Number of books per page (default: 10)
-console.log(page);
-let books;
+  const perPage = parseInt(req.query.perPage) || 8; // Number of books per page (default: 10)
+  const  query = req.query?.question;
+
+  let books;
   try {
     const skip = (page - 1) * perPage;
+
+    if(query) {
+       books = await Book.find({
+        $or: [{ title: new RegExp(query, 'i') }, { author: new RegExp(query, 'i') }],
+      }) // Adjust the limit as per your pagination needs
+      // res.json(books);
+    }
+    
     // Fetch paginated books from the database
-    books = await Book.find()
+    else{
+       books = await Book.find()
       .skip(skip)
       .limit(perPage);
+    }
+    
   } catch (error) {
     console.error(error);
     return res.status(500).json({ error: 'Server error' });

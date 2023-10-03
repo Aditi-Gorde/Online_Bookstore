@@ -180,6 +180,15 @@ import {
                variant="outlined"
                name="publisher"
              />
+             <FormLabel>Price</FormLabel>
+             <TextField
+               value={inputs.price}
+               onChange={handleChange}
+               margin="normal"
+               fullWidth
+               variant="outlined"
+               name="price"
+             />
              
              <Button variant="contained" type="submit">
                Update Book
