@@ -12,7 +12,7 @@ function CartItem({book}) {
     const { removeFromCart } = useContext(CartContext)
     const deleteHandler = async () => {
       await axios
-        .delete(`process.env.backend_url/Cart/${_id}`)
+        .delete(`${process.env.backend_url}/Cart/${_id}`)
         .then((res) => res.data)
         .then(() => history("/Cart"))
         

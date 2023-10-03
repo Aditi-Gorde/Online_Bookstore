@@ -20,7 +20,7 @@ import {
     useEffect(() => {
       const fetchHandler = async () => {
         await axios
-          .get(`process.env.backend_url/books/${id}`)
+          .get(`${process.env.backend_url}/books/${id}`)
           .then((res) => res.data)
           .then((data) => setInputs(data.book));
       };
@@ -29,7 +29,7 @@ import {
   
     const sendRequest = async () => {
       await axios
-        .put(`process.env.backend_url/books/${id}`, {
+        .put(`${process.env.backend_url}/books/${id}`, {
           bookID:Number(inputs.bookID),
           title:String(inputs.title),
           authors:String(inputs.authors),

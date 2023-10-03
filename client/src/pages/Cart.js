@@ -40,7 +40,7 @@ function Cart() {
             ordered_books.push({bookID: element._id}, {price: element.price})
         }); 
 
-        axios.post(`process.env.backend_url/Cart`, {
+        axios.post(`${process.env.backend_url}/Cart`, {
             memberID: data.user.id,
             books: ordered_books,
             totalPrice: cartItems.reduce((amount, item) =>
