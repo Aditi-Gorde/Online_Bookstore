@@ -17,7 +17,7 @@ function BookData() {
   const [book, setBook] = useState([]);
   const history = useNavigate();
   useEffect(() => {
-    axios.get(`${process.env.backend_url}/books/${id}`)
+    axios.get(`${process.env.REACT_APP_backend_url}/books/${id}`)
       .then((response) => {
         setBook(response.data.book);
         console.log(book);

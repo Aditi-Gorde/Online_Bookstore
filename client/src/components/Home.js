@@ -16,7 +16,7 @@ export default function Home() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    axios.get(`${process.env.backend_url}/books`)
+    axios.get(`${process.env.REACT_APP_backend_url}/books`)
       .then((response) => {
         setBooks(response.data.books);
         console.log(books);
@@ -25,7 +25,8 @@ export default function Home() {
         console.log("error");
         console.error(error);
       });
-  });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[]);
 console.log(books);
   if (!Array.isArray(books)) {
     return <div>No books available</div>;

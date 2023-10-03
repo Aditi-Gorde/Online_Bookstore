@@ -20,7 +20,7 @@ function Cart() {
     const [books, setBooks] = useState([]);
     // useEffect(() => {
     //     console.log(user)
-    //     axios.get('process.env.backend_url/Cart')
+    //     axios.get('process.env.REACT_APP_backend_url/Cart')
     //       .then((response) => {
     //         setBooks(response.data.books);
     //         console.log(books);
@@ -40,7 +40,7 @@ function Cart() {
             ordered_books.push({bookID: element._id}, {price: element.price})
         }); 
 
-        axios.post(`${process.env.backend_url}/Cart`, {
+        axios.post(`${process.env.REACT_APP_backend_url}/Cart`, {
             memberID: data.user.id,
             books: ordered_books,
             totalPrice: cartItems.reduce((amount, item) =>
