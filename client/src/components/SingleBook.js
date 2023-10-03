@@ -41,14 +41,11 @@ function SingleBook({ book }) {
     <Card style={{ width:'15rem' }}>
       <Card.Img variant="top" src="https://i.pinimg.com/originals/a4/0e/8f/a40e8f3a56c14f0ddb988757cdf4372b.jpg" />
       <Card.Body>
-        <Card.Title style={{ fontSize: 16, height: '5rem' }}><strong>{book.title}</strong></Card.Title>
-        <Card.Text style={{ height: '4rem' }}>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
+        <Card.Title style={{ fontSize: 16, height: '3rem' }}><strong>{book.title}</strong></Card.Title>
+      
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>Authors : {book.authors}</ListGroup.Item>
+        <ListGroup.Item style={{ height: '4rem' }} >Authors : {book.authors}</ListGroup.Item>
         <ListGroup.Item>Rating : {book.average_rating}</ListGroup.Item>
         <ListGroup.Item>Price : {book.price}</ListGroup.Item>
         {/* <Link to={`/AllBooks/${book._id}`}>Details</Link> */}

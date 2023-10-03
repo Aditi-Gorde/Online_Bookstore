@@ -32,16 +32,16 @@ function AllBooks() {
   };
 
   return (
-    <div style={{ width: '100%', padding: 30 }}>
+    <div style={{ width: '100%', padding: 30, paddingTop:'0.5rem' }}>
       <h2 className='heading'>Book List</h2>
       <div className='w-full' style={{display: 'flex', justifyContent: 'end'}}>
       <Search onSearch={handleSearch}/>
-      <Button className='AddBookbtn' ><NavLink to="/AddBook" style={{color:'black'}}>Add Book</NavLink></Button>
+      <Button className='AddBookbtn' ><NavLink to="/AddBook" style={{color:'black', backgroundColor: 'rgb(222, 214, 201)'}}>Add Book</NavLink></Button>
       </div>
       <div className='book-container'>
           <Row lg={3}>
             {books.map((book, i) => (
-              <Col className='d-flex  mw-100 w-25 mx-auto mb-3'>
+              <Col className='d-flex mw-100 w-25 mx-auto mb-3'>
                 <li key={i}>
                   <SingleBook book={book} className="flex-fill" />
                 </li>
@@ -52,12 +52,12 @@ function AllBooks() {
 
       <div className='mx-auto mw-100 d-flex' style={{ justifyContent: 'center' }}>
         <Pagination>
-          <Pagination.Prev onClick={() => setCurrentPage(1)} />
-          <Pagination.Ellipsis onClick={() => setCurrentPage(currentPage - 1)} />
+          <Pagination.Prev onClick={() => setCurrentPage(1)}/>
+          {/* <Pagination.Ellipsis onClick={() => setCurrentPage(currentPage - 1)} />
           <Pagination.Item onClick={() => setCurrentPage(3)}>{3}</Pagination.Item>
           <Pagination.Item onClick={() => setCurrentPage(4)}>{4}</Pagination.Item>
           <Pagination.Item onClick={() => setCurrentPage(5)}>{5}</Pagination.Item>
-          <Pagination.Ellipsis onClick={() => setCurrentPage(currentPage + 1)} />
+          <Pagination.Ellipsis onClick={() => setCurrentPage(currentPage + 1)} /> */}
           <Pagination.Next onClick={() => setCurrentPage(currentPage + 1)} />
         </Pagination>
       </div>
