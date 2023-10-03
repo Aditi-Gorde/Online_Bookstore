@@ -10,7 +10,7 @@ const Books = () => {
   const [books, setBooks] = useState();
   useEffect(() => {
     fetchHandler().then((data) => setBooks(data.books));
-  }, [books]);
+  });
   console.log(books);
   return (
     <div>
