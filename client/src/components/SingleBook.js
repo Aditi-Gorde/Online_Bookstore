@@ -38,7 +38,7 @@ function SingleBook({ book }) {
   const [buttonName, setButtonName] = useState('Add to cart')
 
   return (
-    <Card style={{ boxShadow: '4px' }}>
+    <Card style={{ width:'15rem' }}>
       <Card.Img variant="top" src="https://i.pinimg.com/originals/a4/0e/8f/a40e8f3a56c14f0ddb988757cdf4372b.jpg" />
       <Card.Body>
         <Card.Title style={{ fontSize: 16, height: '5rem' }}><strong>{book.title}</strong></Card.Title>
@@ -58,7 +58,7 @@ function SingleBook({ book }) {
               <button onClick={(e) => {
                 addToCart(book);
                 e.target.disabled = true
-                setButtonName("Added")
+                setButtonName("Added to cart")
               }} class="btn ac">{buttonName}</button>
             </ListGroup.Item>
             <ListGroup.Item className='mx-auto'>

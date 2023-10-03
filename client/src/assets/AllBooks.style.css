@@ -22,3 +22,8 @@ padding: 2rem;
 display:flex;
 justify-content:space-between;
 }
+
+.AddBookbtn {
+  background-color: rgb(222, 214, 201);
+    color: black;
+}

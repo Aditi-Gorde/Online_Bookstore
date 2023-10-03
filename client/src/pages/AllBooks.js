@@ -36,7 +36,7 @@ function AllBooks() {
       <h2 className='heading'>Book List</h2>
       <div className='w-full' style={{display: 'flex', justifyContent: 'end'}}>
       <Search onSearch={handleSearch}/>
-      <Button variant="primary"><NavLink to="/AddBook">Add Book</NavLink></Button>
+      <Button className='AddBookbtn' ><NavLink to="/AddBook" style={{color:'black'}}>Add Book</NavLink></Button>
       </div>
       <div className='book-container'>
           <Row lg={3}>

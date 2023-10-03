@@ -29,13 +29,13 @@ export default function Search({ onSearch }) {
     return (
         <div>
             <div className="d-flex align-items-center" role="search">
-                <input className="form-control me-2" 
+                <input className="form-control me-2" style={{width:'14rem'}} 
                     type="search" 
                     placeholder="Search by title or author"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)} aria-label="Search" />
                 {/* <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" style={{ color: "#050505", marginRight: '1rem' }} /> */}
-                <Button variant='warning' onClick={handleSearch}>Search</Button>
+                <Button style={{backgroundColor:'rgb(222, 214, 201)',color:'black',marginRight:'0.2rem'}} variant='warning' onClick={handleSearch}>Search</Button>
             </div>
         </div>
     )

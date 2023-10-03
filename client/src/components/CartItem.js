@@ -26,7 +26,7 @@ function CartItem({book}) {
                     <div className="item-content">
                         <h2>{book.title}</h2>
                         <p>{book.authors}</p>
-                        <h3 className="price">Price: {book.price}</h3>
+                        <h4 className="price">Price: {book.price}</h4>
                         <button onClick={()=>removeFromCart(book._id)} class="btn ac" type="submit" >Remove</button>
                     </div>
                 </div>

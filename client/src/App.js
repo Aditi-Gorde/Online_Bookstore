@@ -1,6 +1,6 @@
 import {Routes, Route, Navigate} from 'react-router-dom';
 import Home from './components/Home.js'
-import Book_navbar from './components/Book_navbar.js'
+import BookNavbar from './components/BookNavbar.js'
 import { SignUp } from "./pages/signUp";
 import { Login } from "./pages/login";
 import { useAuthContext } from "./hooks/useAuthContext";
@@ -18,7 +18,7 @@ function App() {
   const someUser = localStorage.getItem("user");
   return (
   <>
-  <Book_navbar />
+  <BookNavbar />
   <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/signup" element={<SignUp />} />
@@ -30,7 +30,6 @@ function App() {
     <Route path="/AllBooks" element={<AllBooks />} exact />
     <Route path="/AllBooks/:id" element={<BookData />} exact />
   </Routes>
-  {/* <AllBooks /> */}
   <Footer />
   </>
   );

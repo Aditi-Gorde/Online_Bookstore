@@ -17,3 +17,9 @@
     background-color: rgb(50, 48, 48);
     color: #fff;
   }
+
+  #dropdown-basic {
+    background-color: rgb(222, 214, 201);
+    color: black;
+    margin-left: 1rem;
+  }

@@ -72,7 +72,7 @@ function Cart() {
                                         />
                                     ))}
                                 </ul>
-                                <strong><div className="cartTotal">
+                                <strong><div className="cartTotal" style={{fontSize:'1.5rem'}}>
                                     Cart total
                                     <span className="cartTotalPrice">$
                                         {(cartItems.reduce((amount, item) =>
@@ -82,16 +82,17 @@ function Cart() {
                             </div>
                         )) : (<h4 className="cartStatement">Please login to access cart!</h4>)
                         }
-                </div>
-
-                <div>
+                        <div>
                     {user ?
                         (cartItems.length > 0 ?
-                            (<button onClick={() => checkout()} className="reserveButton">Apply for book reservation</button>)
+                            (<button onClick={() => checkout()} className="reserveButton">Checkout</button>)
                             : "") : ''
                     }
 
                 </div>
+                </div>
+
+                
             </div>
         </section>
     )

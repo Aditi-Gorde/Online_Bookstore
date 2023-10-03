@@ -74,3 +74,9 @@ ul {
     }
 }
 
+.reserveButton {
+    background-color: rgb(222, 214, 201);
+    color: black;
+    width: 6rem;
+    height: 3rem;
+}
