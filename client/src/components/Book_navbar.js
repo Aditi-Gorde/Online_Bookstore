@@ -9,15 +9,28 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../assets/Book_navbar.style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function Book_navbar() {
 
   const editClick = () => {
-    toast.success('Choose the book to be Edited', {
-      position: 'top-right',
+    toast("Choose the book to be Edited", {
+      position: 'top-center',
+      theme: "dark",
+      hideProgressBar: true,
       autoClose: 3000,  
+
     });
+    setTimeout(() => {
+      navigateToBooks();
+    }, 1000); 
   };
+
+  const navigate = useNavigate()
+
+  const navigateToBooks = () => {
+    navigate("/AllBooks")
+}
   
   const { logout } = useLogout();
   const { user } = useAuthContext();
@@ -30,7 +43,7 @@ export default function Book_navbar() {
     <div>
        <nav className="navbar navbar-expand-lg bg-body-tertiary  " style={{padding:'1rem'}}>
   <div className="container-fluid">
-    <a className="navbar-brand" href="/">Booktopia</a>
+    <a className="navbar-brand" href="/">INKSTORY</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -46,7 +59,8 @@ export default function Book_navbar() {
                 Add Book
               </NavLink></li>
               <li><hr className="dropdown-divider" /></li>
-            <li><a className="dropdown-item" href="/AllBooks" onClick={editClick}>Update</a></li>
+            <li><Button className="dropdown-item" onClick={editClick}>Update</Button></li>
+            <ToastContainer />
             <li><a className="dropdown-item" href="/AllBooks" onClick={editClick}>Delete</a></li>
             <ToastContainer />
           </ul>
